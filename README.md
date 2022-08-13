@@ -4,6 +4,8 @@
 
 This project is a design and implementation a PID controller for steering and throttle to perform vehicle trajectory tracking. 
 This PID controller is then used on CARLA Simulator to test and fine tune the PID constants values.
+![carla](project/carla.png)
+Screenshot of carla simulator.
 
 ### Installation
 
@@ -59,20 +61,28 @@ In [/project/](project/) directory I have the plots of pid controller for steeri
 
 Answer the following questions:
 - Add the plots to your report and explain them (describe what you see)
+
+Output of steering and throttle PID controller
+
+![output](project/output.png)
+
 ![steer](project/steering.png)
 
 ![throttle](project/throttle.png)
-
+PID controller decreases the error smoothly.
 
 - What is the effect of the PID according to the plots, how each part of the PID affects the control command?
+
 Proportional or P controller gives output proportional to the error to make the error 0, but it always has some offset.
 I controller integrates the error over a period of time thereby eleminating the offset of p-controller.
 D controller anticipates the future behavior od error.
 
 - How would you design a way to automatically tune the PID parameters?
+- 
 By implementing twiddle algorithm or other hyper parameter tuning algorithms.
 
 - PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
+
 Pros: Easy to design and optimize.
 Cons: May not hold good if it is used of different sized vehicles without tuning the pid constants for that vehicle.
 
