@@ -4,9 +4,13 @@
 
 This project is a design and implementation a PID controller for steering and throttle to perform vehicle trajectory tracking. 
 This PID controller is then used on CARLA Simulator to test and fine tune the PID constants values.
+
 ![carla](project/carla.png)
+
 Car at stop before PID implementation.
+
 ![carla](project/overtake.png)
+
 Car overtaking another car in the same lane.
 
 ### Installation
@@ -67,10 +71,14 @@ Answer the following questions:
 Plot of steering and throttle PID controller
 Final PID constant values for steering after tuning:
 kp = 0.32, kd = 0.003, ki = 0.1
+
 ![steer](project/steering.png)
+
 Final PID constant values for steering after tuning:
 kp = 0.2, kd = 0.0009, ki = 0.1
+
 ![throttle](project/throttle.png)
+
 PID controller decreases the error smoothly.
 
 - What is the effect of the PID according to the plots, how each part of the PID affects the control command?
