@@ -5,7 +5,9 @@
 This project is a design and implementation a PID controller for steering and throttle to perform vehicle trajectory tracking. 
 This PID controller is then used on CARLA Simulator to test and fine tune the PID constants values.
 ![carla](project/carla.png)
-Screenshot of carla simulator.
+Car at stop before PID implementation.
+![carla](project/overtake.png)
+Car overtaking another car in the same lane.
 
 ### Installation
 
