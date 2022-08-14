@@ -28,7 +28,7 @@ void PID::Init(double Kpi, double Kii, double Kdi, double output_lim_maxi, doubl
   ctep =0.0;
   cted =0.0;
   ctei =0.0;
-  cteprev =0.0;
+  dt =0.0;
 
 }
 
@@ -54,7 +54,7 @@ double PID::TotalError() {
     * The code should return a value in the interval [output_lim_mini, output_lim_maxi]
    */
     double control;
-  	control = Kp*cte +Kd*cted +Ki*ctei;
+  	control = Kp*ctep +Kd*cted +Ki*ctei;
   	control =max(min(control,output_lim_max),output_lim_min);
     return control;
 }
