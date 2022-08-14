@@ -28,6 +28,8 @@ void PID::Init(double Kpi, double Kii, double Kdi, double output_lim_maxi, doubl
   ctep =0.0;
   cted =0.0;
   ctei =0.0;
+  cteprev =0.0;
+
 }
 
 
@@ -35,8 +37,13 @@ void PID::UpdateError(double cte) {
    /**
    * TODO: Update PID errors based on cte.
    **/
-  cted = cte - ctep;
-  ctei += cte;
+  if(dt > 0.0)
+  	cted = (cte - ctep)/dt;
+  else
+    cted = 0.0;
+    
+  ctei += cte*dt;
+  
   ctep=cte;
   
 }

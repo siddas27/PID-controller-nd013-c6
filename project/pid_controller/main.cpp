@@ -218,16 +218,15 @@ int main ()
   /**
   * TODO (Step 1): create pid (pid_steer) for steer command and initialize values
   **/
-   PID pid_steer = PID();
-   // The output of the controller should be inside [-1.2, 1.2]
-  pid_steer.Init(0.32, 0.001, 0.1, 1.2, -1.2); 
   // initialize pid throttle
   /**
   * TODO (Step 1): create pid (pid_throttle) for throttle command and initialize values
   **/
+
+  PID pid_steer = PID();
   PID pid_throttle = PID();
-// The output of the controller should be inside [-1, 1]
-  pid_throttle.Init(0.3, 0.0009, 0.1, 1.0, -1.0);
+ pid_steer.Init(0.3, 0.001, 0.3, 1.2, -1.2); 
+  pid_throttle.Init(0.2, 0.0009, 0.1, 1.0, -1.0);
 
   h.onMessage([&pid_steer, &pid_throttle, &new_delta_time, &timer, &prev_timer, &i, &prev_timer](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode)
   {
@@ -299,12 +298,8 @@ int main ()
           double steer_output;
 
           /**
-          * (step 3): compute the steer error (error_steer) from the position and the desired trajectory
-          * The variable y_points and x_point gives the desired trajectory planned by the path_planner and 
-          * yaw gives the actual rotational angle of the car. Therefore the error_steer is difference between 
-          * current angle and desired angle.
+          * TODO (step 3): compute the steer error (error_steer) from the position and the desired trajectory
           **/
-
           error_steer = angle_between_points(x_position, y_position, x_points[x_points.size() - 1], y_points[y_points.size() - 1]) -yaw;
 
           /**
@@ -336,9 +331,7 @@ int main ()
           // Compute error of speed
           double error_throttle;
           /**
-          * (step 2): compute the throttle error (error_throttle) from the position and the desired speed.
-          * v_points gives desired velocity and velocity is the actual velocity, therefore error is the 
-          * difference between these two.
+          * TODO (step 2): compute the throttle error (error_throttle) from the position and the desired speed
           **/
           // modify the following line for step 2
           error_throttle = v_points[v_points.size() - 1] - velocity;
