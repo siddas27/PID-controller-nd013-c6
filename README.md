@@ -62,12 +62,12 @@ In [/project/](project/) directory I have the plots of pid controller for steeri
 Answer the following questions:
 - Add the plots to your report and explain them (describe what you see)
 
-Output of steering and throttle PID controller
-
-![output](project/output.png)
-
+Plot of steering and throttle PID controller
+Final PID constant values for steering after tuning:
+kp = 0.32, kd = 0.003, ki = 0.1
 ![steer](project/steering.png)
-
+Final PID constant values for steering after tuning:
+kp = 0.2, kd = 0.0009, ki = 0.1
 ![throttle](project/throttle.png)
 PID controller decreases the error smoothly.
 
